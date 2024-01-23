@@ -11,7 +11,7 @@ function Navbar() {
   return (
     <div className = {styles.navbarClass}>
         <Logo image ={img}  width ="67px" height ="34px"/>
-        <Search placeholder = "search a song..."/>
+        <Search placeholder="Search a song of your choice"/>
         <Button text = "Give Fedback"/>
         {/* <Button>Give Feedback</Button> */}
         

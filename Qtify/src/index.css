@@ -1,7 +1,8 @@
 :root{
   --color-primary:#34c94b;
   --color-white:#fff;
-  --color-black:#121212;
+  --color-black:black;
+  
 
 }
 *,
@@ -15,11 +16,12 @@ body{
   font-family: "poppins",sans-serif;
   background-color: var(--color-black);
   line-height: 1.5;
-  height: 1907px;
-  width:1440px;
+  height: 1907x;
+  width:100vw;
   overflow-x: hidden;
-  Top:-512px;
-  Left:-720px;
+  margin: 0;
+  /* Top:-512px;
+  Left:-720px; */
 
 
 

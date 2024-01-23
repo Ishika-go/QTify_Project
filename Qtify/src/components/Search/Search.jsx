@@ -3,17 +3,17 @@ import React from "react";
 import styles from "./Search.module.css";
 import searchIcon from "../../assets/searchIcon.png";
 
-export default function Search({typingText}){
+export default function Search({placeholder}){
 
     const handleSubmit=(event)=>{
         event.preventDefault();
-    }
+    } 
     return (
 
     <form onSubmit={(handleSubmit)}  className={styles.flexClass}>
         <input
         required
-        placeholder={typingText}
+        placeholder={placeholder}
         type = "text"
         className={styles.searchbar}/>
 
