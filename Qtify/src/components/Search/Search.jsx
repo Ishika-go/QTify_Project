@@ -1,7 +1,7 @@
 
 import React from "react";
 import styles from "./Search.module.css";
-import searchIcon from "../../assets/searchIcon.png";
+import { ReactComponent as SearchIcon } from "../../assets/searchicon.svg";
 
 export default function Search({placeholder}){
 
@@ -10,7 +10,8 @@ export default function Search({placeholder}){
     } 
     return (
 
-    <form onSubmit={(handleSubmit)}  className={styles.flexClass}>
+    <form onSubmit={(handleSubmit)}  className={styles.wrapper}>
+        
         <input
         required
         placeholder={placeholder}
@@ -18,8 +19,8 @@ export default function Search({placeholder}){
         className={styles.searchbar}/>
 
         <button className = {styles.buttonsetup}>
-            
-        <img src = {searchIcon} alt="no image" />
+            <SearchIcon />
+        {/* <img src = {searchIcon} alt="no image" /> */}
         </button>
 
     </form>)

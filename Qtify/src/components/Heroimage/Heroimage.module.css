@@ -4,20 +4,17 @@ height: 270px;
 display: flex;
     justify-content: center;
     align-items: center;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 270px;
-    background-color: var(--color-black);
-    gap: 30px; */
-
-/* top: 74px */
+color: var(--color-white);
+background-color: var(--color-black);
+gap: 30px;
 
 }
 .heroimage{
-    width: 799px;
+    width: 212px;
 height: 212px;
-/* align-items: center; */
 
 
+}
+.title{
+    text-align: center;
 }

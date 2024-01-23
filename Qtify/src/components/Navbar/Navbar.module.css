@@ -6,7 +6,11 @@
     height:74px;
     background-color:var(--color-primary);
   
-    padding: 13px 32px;
+    /* padding: 13px 32px; */
+    padding-top: 13px;
+    padding-right: 32px;
+    padding-bottom: 13px;
+    padding-left: 32px;
     
     margin: 0;
     
