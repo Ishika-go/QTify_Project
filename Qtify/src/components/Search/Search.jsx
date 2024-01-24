@@ -18,7 +18,7 @@ export default function Search({placeholder}){
         type = "text"
         className={styles.searchbar}/>
 
-        <button className = {styles.buttonsetup}>
+        <button className = {styles.buttonsetup} type="submit">
             <SearchIcon />
         {/* <img src = {searchIcon} alt="no image" /> */}
         </button>
