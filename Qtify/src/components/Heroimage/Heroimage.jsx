@@ -2,7 +2,7 @@
 import styles from "./Heroimage.module.css";
 
 import heroimage from "../../assets/vibrating-headphone.png";
-
+import Logo from '../Logo/Logo';
 function Heroimage() {
   return (
     <div className={styles.divOfHeroimage}>
@@ -11,7 +11,8 @@ function Heroimage() {
         <h1>and “Over thousands podcast episodes</h1>
       </div>
      
-      <img className={styles.heroimage} src={heroimage} />
+      {/* <img className={styles.heroimage} src={heroimage} /> */}
+      <Logo image ={heroimage}  width ="212px" height ="212px"/>
     </div>
   );
 }
