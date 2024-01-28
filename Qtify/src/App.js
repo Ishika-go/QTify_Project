@@ -5,10 +5,12 @@ import Navbar from "./components/Navbar/Navbar";
 import Heroimage from "./components/Heroimage/Heroimage";
 import Section from"./components/Section/Section";
 import { useEffect,useState } from "react";
-import {fetchTopAlbumData} from "./API/API";
+import {fetchTopAlbumData,fetchNewAlbums} from "./API/API";
 // import Card from "./components/Card/Card";
 function App() {
   const [topAlbumData,setTopAlbumData] = useState([]);
+  const [newAlbumData,setNewAlbumData] = useState([]);
+
 
 console.log(topAlbumData);
 const generateTopAlbums = async()=>{
@@ -23,11 +25,26 @@ const generateTopAlbums = async()=>{
 
   }
 
-}   
+}  
+
+const generateNewAlbums = async()=>{
+  try{
+    const newAl = await fetchNewAlbums();
+    // console.log(d);
+    setNewAlbumData(newAl);
+
+  }
+  catch(e){
+    console.log(e);
+
+  }
+
+}  
 
 useEffect(()=>{
 
   generateTopAlbums();
+  generateNewAlbums();
 
 },[]);    //here com
 
@@ -41,6 +58,7 @@ topAlbumData.map((topAlbum)=>(
   <Card data ={topAlbum} type="album" key={topAlbum.id} />
 ))} */}
 <Section data={topAlbumData} title="Top Albums" type="album" />
+<Section data={newAlbumData} title="New Albums" type="album" />
     </div>
   );
 }
