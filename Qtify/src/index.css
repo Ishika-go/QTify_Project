@@ -12,18 +12,35 @@
 *::after{
   box-sizing: border-box;
 }
+html,body{
+  height: 100%;
+}
+
+*{
+  margin:0;
+}
 body{
   font-family: "Poppins", Arial, sans-serif;
   /* font-family: "poppins",sans-serif; */
   background-color: var(--color-black);
   line-height: 1.5;
-  height: 1907px;
-  width:100vw;
+  /* height: 1907px; */
+  /* width:100vw; */
   overflow-x: hidden;
-  margin: 0;
-  /* Top:-512px;
-  Left:-720px; */
+  /* margin: 0; */
+  color: var(--color-white);
+
+  -webkit-font-smoothing:antialiased;
 
 
-
+}
+p,h1,h2,h3,h4,h5,h6{
+  overflow-wrap: break-word;
+}
+img,svg{
+  display: block;
+  max-width: 100%;
+}
+input,button,textarea,select{
+  font: inherit;
 }
