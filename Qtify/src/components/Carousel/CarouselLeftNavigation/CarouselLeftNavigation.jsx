@@ -20,7 +20,7 @@ function CarouselLeftNavigation(){
 
       swiper.on("slideChange", slideChangeHandler);
 
-      // Clean up the event listener when the component unmounts
+ 
       return () => {
           swiper.off("slideChange", slideChangeHandler);
       };
@@ -30,9 +30,9 @@ function CarouselLeftNavigation(){
     <div className = {styles.leftNavigationArrow}>
         
         
-        {
-            !isBeginning&&<LeftArrow onClick={()=>{swiper.slidePrev()}}/>
-            }
+      
+        {!isBeginning&&<LeftArrow onClick={()=>swiper.slidePrev()}/> }
+           
         
     </div>
   );

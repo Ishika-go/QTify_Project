@@ -36,22 +36,25 @@ const Controls = ({ data }) => {
   
 //   }
 const Carousel = ({data,renderComponent}) => {
+  console.log(data);
   return (
     <div className = {styles.wraper}>
         <Swiper 
         style={{padding: "0px 20px"}}
         initialSlide = {0}
-        modules={[Navigation]}
-        slidesPerView={"auto"}
+        modules={Navigation}
+        
+        slidesPerView={'auto'} 
+        centeredSlides={true}
         spaceBetween={40}
         allowTouchMove
         >
             <Controls data={data}/>
             <CarouselLeftNavigation />
             <CarouselRightNavigation />
-           {data&&data.map((element)=>{
-                return (<SwiperSlide>{renderComponent(element)}</SwiperSlide>)
-           })} 
+           {data.map((element)=>
+                (<SwiperSlide>{renderComponent(element)}</SwiperSlide>)
+           )} 
         </Swiper>
         </div>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect,useState } from 'react';
+import { useState } from 'react';
 import styles from "./Section.module.css";
 import { CircularProgress } from '@mui/material';
 import Card from "../Card/Card";
@@ -13,6 +13,7 @@ const Section = ({data,title,type}) => {
             return !carouselToggle;
         });
     }
+     console.log(data);
       
   return (
     <div className={styles.container}>
@@ -28,14 +29,14 @@ const Section = ({data,title,type}) => {
   <Card data ={topAlbum} type={type} key={topAlbum.id} />
 ))}
                     </div>):(
-                        <>
-                    <Carousel data = {data} renderComponent={(dataForSingleCard)=><Card data = {dataForSingleCard} type = {type} key={dataForSingleCard.id}/>} /> </>)}</div>
+                       
+                    <Carousel data = {data} renderComponent={(data)=><Card data = {data} type = {type} key={data.id}/>} /> )}</div>
                 )}
 
     </div>
     
-  )
-}
-{/* <Carousel data = {data} renderComponent={(dataForSingleCard)=><Card data = {dataForSingleCard} type = {type}/>} /> */}
-export default Section
+  );
+};
+
+export default Section;
 

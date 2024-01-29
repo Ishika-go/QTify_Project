@@ -29,7 +29,7 @@ const CarouselRightNavigation = () => {
         
         
         {
-            !isEnd&&<RightArrow onClick={()=>{swiper.slideNext()}}/>
+            !isEnd&&<RightArrow onClick={() => swiper.slideNext()}/>
             }
         
     </div>
