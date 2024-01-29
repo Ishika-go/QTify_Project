@@ -1,15 +1,19 @@
 // import logo from './logo.svg';
 // import './App.css';
-import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Heroimage from "./components/Heroimage/Heroimage";
 import Section from"./components/Section/Section";
-import { useEffect,useState } from "react";
-import {fetchTopAlbumData,fetchNewAlbums} from "./API/API";
+import React,{ useEffect,useState } from "react";
+import {fetchTopAlbumData,fetchNewAlbums,fetchAllSongs} from "./API/API";
+
 // import Card from "./components/Card/Card";
 function App() {
   const [topAlbumData,setTopAlbumData] = useState([]);
   const [newAlbumData,setNewAlbumData] = useState([]);
+  // const[songsData,setSongsData] =  useState([]);
+  // const[toggle,setToggle] = useState(false);
+  // const[value,setValue]  = useState(0);
+
 
 
 console.log(topAlbumData);
@@ -39,13 +43,31 @@ const generateNewAlbums = async()=>{
 
   }
 
-}  
+} 
+
+// const generateAllSongsData=async()=>{
+//   try{
+//     const songss = await fetchAllSongs();
+//     // console.log(d);
+//     setSongsData(songss);
+//     setFilteredDataValues(songss)
+
+//   }
+//   catch(e){
+//     console.log(e);
+
+//   }
+// }
+
+// const filteredData =(val)=>{
+//   setFilteredDataValues(val);
+// }
 
 useEffect(()=>{
 
   generateTopAlbums();
   generateNewAlbums();
-
+  // generateAllSongsData();
 },[]);    //here com
 
   return (

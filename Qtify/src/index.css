@@ -44,3 +44,7 @@ img,svg{
 input,button,textarea,select{
   font: inherit;
 }
+
+.swiper-slide{
+  width: auto !important;
+}

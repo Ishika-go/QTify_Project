@@ -13,7 +13,7 @@ const Controls = ({ data }) => {
   
     useEffect(() => {
       const slideToCallback = () => {
-        swiper.slideTo(0);
+        swiper.slideTo(0,null);
       };
   
       swiper.on("slideChange", slideToCallback);
@@ -22,7 +22,7 @@ const Controls = ({ data }) => {
       return () => {
         swiper.off("slideChange", slideToCallback);
       };
-    }, [data, swiper]);
+    }, [data]);
   
     return <></>;
   };
@@ -42,10 +42,10 @@ const Carousel = ({data,renderComponent}) => {
         <Swiper 
         style={{padding: "0px 20px"}}
         initialSlide = {0}
-        modules={Navigation}
+        modules={[Navigation]}
         
-        slidesPerView={'auto'} 
-        centeredSlides={true}
+        slidesPerView="auto"
+       
         spaceBetween={40}
         allowTouchMove
         >

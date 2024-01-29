@@ -20,17 +20,17 @@ const CarouselRightNavigation = () => {
       swiper.on("slideChange", slideChangeHandler);
 
       // Clean up the event listener when the component unmounts
-      return () => {
-          swiper.off("slideChange", slideChangeHandler);
-      };
-  }, [swiper]);
+      // return () => {
+      //     swiper.off("slideChange", slideChangeHandler);
+      // };
+  }, [isEnd]);
   return (
     <div className={styles.rightNavigationArrow}>
         
         
-        {
-            !isEnd&&<RightArrow onClick={() => swiper.slideNext()}/>
-            }
+        
+            {!isEnd?<RightArrow onClick={() => swiper.slideNext()}/>:null}
+            
         
     </div>
   )
