@@ -44,7 +44,7 @@ import { useEffect,useState } from 'react';
 import styles from "./Section.module.css";
 import { CircularProgress } from '@mui/material';
 import Card from "../Card/Card";
-import Carousel from '../Carousel/Carousel';
+// import Carousel from '../Carousel/Carousel';
 
 const Section = ({data,title,type}) => {
     const[carouselToggle,setCarouselToggle] = useState(true);
@@ -63,13 +63,13 @@ const Section = ({data,title,type}) => {
                 {carouselToggle?"Show All":"Collapse"}
             </h4>
         </div>
-                {(data.length===0) ?(<CircularProgress />):(
+                {
                     <div className = {styles.cardWrapper}>{(<div className ={styles.wrapper}>
                         {data.map((topAlbum)=>(
   <Card data ={topAlbum} type={type} key={topAlbum.id} />
 ))}
                     </div>)}</div>
-                )}
+                }
 
     </div>
     
