@@ -4,13 +4,13 @@
     align-items: baseline;
 }
 .wrapper{
-    /* display:flex;
+    display:flex;
     gap:40px;
-    flex-wrap: wrap; */
-    display: grid;
+    flex-wrap: wrap;
+    /* display: grid;
     grid-template-columns: repeat(7,159px);
     grid-template-rows: repeat(2,1fr);
-    gap: 40px;
+    gap: 40px; */
 }
 .toggleText{
     cursor:pointer;
