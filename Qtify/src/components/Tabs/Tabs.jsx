@@ -59,6 +59,8 @@ export default function BasicTabs({value, handleChange}) {
           <Tab label="All" {...a11yProps(0)} />
           <Tab label="Rock" {...a11yProps(1)} />
           <Tab label="Pop" {...a11yProps(2)} />
+          <Tab label="Jazz" {...a11yProps(2)} />
+          <Tab label="Blues" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>

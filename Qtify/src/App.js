@@ -39,6 +39,13 @@ function App() {
     else if(value==2){
       key = "pop";
     }
+
+    else if(value==3){
+      key ="jazz";
+    }
+    else if(value==4){
+      key ="blues";
+    }
     const result = songsData.filter((items)=>items.genre.key===key);
     filteredData(result);
     
