@@ -13,10 +13,10 @@ const Card = ({data,type}) => {
                          <div className ={styles.wrapper}>
     
                             <div className = {styles.card}>
-                                <img src = {image} alt ="album"/>
+                                <img src = {image} alt ="song"/>
                                 <div className={styles.banner}>
                                     <div className ={styles.pill}>
-                                        <p>{likes} likes</p>
+                                        <p>{likes} Likes</p>
                                     </div>
                                 </div>
     

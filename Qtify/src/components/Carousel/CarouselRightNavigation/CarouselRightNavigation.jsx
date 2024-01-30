@@ -23,7 +23,7 @@ const CarouselRightNavigation = () => {
       // return () => {
       //     swiper.off("slideChange", slideChangeHandler);
       // };
-  }, [isEnd]);
+  }, [swiper.isEnd]);
   return (
     <div className={styles.rightNavigationArrow}>
         

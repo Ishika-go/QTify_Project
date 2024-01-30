@@ -10,13 +10,20 @@ import {fetchTopAlbumData,fetchNewAlbums,fetchAllSongs} from "./API/API";
 function App() {
   const [topAlbumData,setTopAlbumData] = useState([]);
   const [newAlbumData,setNewAlbumData] = useState([]);
-  // const[songsData,setSongsData] =  useState([]);
-  // const[toggle,setToggle] = useState(false);
-  // const[value,setValue]  = useState(0);
+  const[songsData,setSongsData] =  useState([]);
+  const[toggle,setToggle] = useState(false);
+  const[value,setValue]  = useState(0);
+  const[filteredDataValues,setFilteredDataValues]=useState([]);
 
 
+  const handleToggle =()=>{
+    setToggle(!toggle);
+  };
 
-console.log(topAlbumData);
+  const handleChange=(event,newVal)=>{
+    setValue(newVal);
+  }
+// console.log(topAlbumData);
 const generateTopAlbums = async()=>{
   try{
     const d = await fetchTopAlbumData();
@@ -45,29 +52,29 @@ const generateNewAlbums = async()=>{
 
 } 
 
-// const generateAllSongsData=async()=>{
-//   try{
-//     const songss = await fetchAllSongs();
-//     // console.log(d);
-//     setSongsData(songss);
-//     setFilteredDataValues(songss)
+const generateAllSongsData=async()=>{
+  try{
+    const songss = await fetchAllSongs();
+    // console.log(d);
+    setSongsData(songss);
+    setFilteredDataValues(songss)
 
-//   }
-//   catch(e){
-//     console.log(e);
+  }
+  catch(e){
+    console.log(e);
 
-//   }
-// }
+  }
+}
 
-// const filteredData =(val)=>{
-//   setFilteredDataValues(val);
-// }
+const filteredData =(val)=>{
+  setFilteredDataValues(val);
+}
 
 useEffect(()=>{
 
   generateTopAlbums();
   generateNewAlbums();
-  // generateAllSongsData();
+  generateAllSongsData();
 },[]);    //here com
 
   return (
@@ -79,7 +86,7 @@ useEffect(()=>{
 topAlbumData.map((topAlbum)=>(
   <Card data ={topAlbum} type="album" key={topAlbum.id} />
 ))} */}
-<Section data={topAlbumData} title="Top Albums" type="album" />
+<Section data={topAlbumData} title="Top Albums" type="album" filteredDataValues={topAlbumData} handleToggle = {handleToggle} />
 {/* <div
   style={{
     background: 'var(--color-primary)',
@@ -88,7 +95,18 @@ topAlbumData.map((topAlbum)=>(
 /> */}
 
 
-<Section data={newAlbumData} title="New Albums" type="album" />
+<Section data={newAlbumData} title="New Albums" type="album" filteredDataValues={newAlbumData} handleToggle = {handleToggle}  />
+
+<Section 
+data= {songsData}
+type = "song"
+title = "Songs"
+filteredData={filteredData}
+filteredDataValues={filteredDataValues}
+value = {value}
+handleToggle = {handleToggle}
+handleChange = {handleChange}
+/>
     </div>
   );
 }

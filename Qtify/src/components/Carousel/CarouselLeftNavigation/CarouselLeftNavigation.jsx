@@ -1,7 +1,7 @@
 import React , {useEffect,useState} from 'react';
 import {useSwiper} from 'swiper/react';
 import styles from "./CarouselLeftNavigation.module.css";
-import { ReactComponent as LeftArrow } from '../../../assets/LeftArrow.svg';
+import { ReactComponent as LeftArrow } from '../../../assets/RightArrow.svg';
 
 function CarouselLeftNavigation(){
     const swiper = useSwiper();
@@ -19,7 +19,7 @@ function CarouselLeftNavigation(){
       // return () => {
       //     swiper.off("slideChange", slideChangeHandler);
       // };
-  }, [isBeginning]); 
+  }, [swiper.isBeginning]); 
 
   return (
     <div className = {styles.leftNavigationArrow}>
