@@ -23,6 +23,27 @@ function App() {
   const handleChange=(event,newVal)=>{
     setValue(newVal);
   }
+
+
+  const generateSongsData=(value)=>{
+    let key;
+    if(value==0){
+      filteredData(songsData);
+      return;
+    }
+    else if(value==1){
+      key ="rock";
+
+
+    }
+    else if(value==2){
+      key = "pop";
+    }
+    const result = songsData.filter((items)=>items.genre.key===key);
+    filteredData(result);
+    
+  }
+
 // console.log(topAlbumData);
 const generateTopAlbums = async()=>{
   try{
@@ -50,24 +71,26 @@ const generateNewAlbums = async()=>{
 
   }
 
-} 
-
-const generateAllSongsData=async()=>{
+}
+const generateAllSongsData = async()=>{
   try{
-    const songss = await fetchAllSongs();
+    const d = await fetchAllSongs();
     // console.log(d);
-    setSongsData(songss);
-    setFilteredDataValues(songss)
+    setSongsData(d);
+    setFilteredDataValues(d);
 
   }
   catch(e){
     console.log(e);
 
   }
-}
 
-const filteredData =(val)=>{
-  setFilteredDataValues(val);
+}  
+
+
+
+const filteredData =(value)=>{
+  setFilteredDataValues(value);
 }
 
 useEffect(()=>{
@@ -76,6 +99,11 @@ useEffect(()=>{
   generateNewAlbums();
   generateAllSongsData();
 },[]);    //here com
+
+useEffect(()=>{
+
+ generateSongsData(value)
+},[value]);
 
   return (
    
@@ -99,7 +127,7 @@ topAlbumData.map((topAlbum)=>(
 
 <Section 
 data= {songsData}
-type = "song"
+type = "songs"
 title = "Songs"
 filteredData={filteredData}
 filteredDataValues={filteredDataValues}

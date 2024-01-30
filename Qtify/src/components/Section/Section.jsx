@@ -31,8 +31,8 @@ const Section = ({data,title,type,filteredDataValues=[],value=0,handleChange=nul
                     <Box sx={{display:'flex',justifyContent:"center",alignItems:"center"}}> <CircularProgress /></Box>
                ):(
                     <div className = {styles.cardWrapper}>{toggle?(<div className ={styles.wrapper}>
-                        {filteredDataValues.map((album)=>(
-  <Card data ={album} type={type} key={album.id} />
+                        {filteredDataValues.map((item)=>(
+  <Card data ={item} type={type} key={item.id} />
 ))}
                     </div>):(
                        
