@@ -115,15 +115,19 @@ topAlbumData.map((topAlbum)=>(
   <Card data ={topAlbum} type="album" key={topAlbum.id} />
 ))} */}
 <Section data={topAlbumData} title="Top Albums" type="album" filteredDataValues={topAlbumData}  />
-{/* <div
-  style={{
-    background: 'var(--color-primary)',
-    height: '1px',
-  }}
-/> */}
+
 
 
 <Section data={newAlbumData} title="New Albums" type="album" filteredDataValues={newAlbumData}  />
+
+
+<div
+  style={{
+    background: 'var(--color-primary)',
+    height: '1px',
+    marginTop:'40px'
+  }}
+/>
 
 <Section 
 data= {songsData}

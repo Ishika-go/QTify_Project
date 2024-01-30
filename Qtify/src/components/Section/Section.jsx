@@ -25,7 +25,7 @@ const Section = ({data,title,type,filteredDataValues=[],value=0,handleChange=nul
                 {!toggle?"Show All":"Collapse"}
             </h4>
         </div>
-        {type==="song"?<BasicTabs value = {value} handleChange={handleChange}/>:null}
+        {type==="songs"?<BasicTabs value = {value} handleChange={handleChange}/>:null}
 
                 {(data.length===0) ?(
                     <Box sx={{display:'flex',justifyContent:"center",alignItems:"center"}}> <CircularProgress /></Box>
