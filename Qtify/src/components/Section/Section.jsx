@@ -6,14 +6,15 @@ import Card from "../Card/Card";
 import Carousel from '../Carousel/Carousel';
 import BasicTabs from "../Tabs/Tabs";
 import Box from '@mui/material/Box';
-const Section = ({data,title,type,filteredDataValues=[],toggle=false,handleToggle=null,value=0,handleChange=null}) => {
-    //    const[carouselToggle,setCarouselToggle] = useState(true);
-    
-    // const handleToggle=()=>{
-    //     setCarouselToggle((carouselToggle)=>{
-    //         return !carouselToggle;
-    //     });
-    // }
+const Section = ({data,title,type,filteredDataValues=[],value=0,handleChange=null}) => {
+      //  const[carouselToggle,setCarouselToggle] = useState(true);
+       const[toggle,setToggle] = useState(false);
+
+    const handleToggle=()=>{
+        setToggle((toggle)=>{
+            return !toggle;
+        });
+    }
     //  console.log(data);
       
   return (

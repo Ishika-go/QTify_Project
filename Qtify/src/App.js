@@ -11,14 +11,14 @@ function App() {
   const [topAlbumData,setTopAlbumData] = useState([]);
   const [newAlbumData,setNewAlbumData] = useState([]);
   const[songsData,setSongsData] =  useState([]);
-  const[toggle,setToggle] = useState(false);
+  // const[toggle,setToggle] = useState(false);
   const[value,setValue]  = useState(0);
   const[filteredDataValues,setFilteredDataValues]=useState([]);
 
 
-  const handleToggle =()=>{
-    setToggle(!toggle);
-  };
+  // const handleToggle =()=>{
+  //   setToggle(!toggle);
+  // };
 
   const handleChange=(event,newVal)=>{
     setValue(newVal);
@@ -86,7 +86,7 @@ useEffect(()=>{
 topAlbumData.map((topAlbum)=>(
   <Card data ={topAlbum} type="album" key={topAlbum.id} />
 ))} */}
-<Section data={topAlbumData} title="Top Albums" type="album" filteredDataValues={topAlbumData} handleToggle = {handleToggle} />
+<Section data={topAlbumData} title="Top Albums" type="album" filteredDataValues={topAlbumData}  />
 {/* <div
   style={{
     background: 'var(--color-primary)',
@@ -95,7 +95,7 @@ topAlbumData.map((topAlbum)=>(
 /> */}
 
 
-<Section data={newAlbumData} title="New Albums" type="album" filteredDataValues={newAlbumData} handleToggle = {handleToggle}  />
+<Section data={newAlbumData} title="New Albums" type="album" filteredDataValues={newAlbumData}  />
 
 <Section 
 data= {songsData}
@@ -104,7 +104,6 @@ title = "Songs"
 filteredData={filteredData}
 filteredDataValues={filteredDataValues}
 value = {value}
-handleToggle = {handleToggle}
 handleChange = {handleChange}
 />
     </div>
