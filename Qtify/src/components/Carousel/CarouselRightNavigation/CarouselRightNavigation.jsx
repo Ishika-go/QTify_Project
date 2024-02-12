@@ -13,17 +13,11 @@ const CarouselRightNavigation = () => {
  
     // },[]);
     useEffect(() => {
-      const slideChangeHandler = () => {
-          setIsEnd(swiper.isEnd);
-      };
-
-      swiper.on("slideChange", slideChangeHandler);
-
-      // Clean up the event listener when the component unmounts
-      // return () => {
-      //     swiper.off("slideChange", slideChangeHandler);
-      // };
-  }, [swiper.isEnd]);
+      console.log(isEnd);
+      swiper.on("slideChange", function () {
+      setIsEnd(swiper.isEnd);
+      });
+      }, [swiper.isEnd]);
   return (
     <div className={styles.rightNavigationArrow}>
         

@@ -21,6 +21,7 @@ function App() {
   // };
 
   const handleChange=(event,newVal)=>{
+    console.log(newVal)
     setValue(newVal);
   }
 
